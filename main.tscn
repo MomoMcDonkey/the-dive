@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://i84u1opejj0v"]
 
-[ext_resource type="Texture2D" uid="uid://dglqo1p5bgpk1" path="res://pixil-frame-0 (6).png" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bicgfekcxb26u" path="res://images/backround-sea.png" id="1_074og"]
 [ext_resource type="Script" uid="uid://bbbadn2qv855s" path="res://player.gd" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://cif725le8gsrk" path="res://man.png" id="3_7mycd"]
-[ext_resource type="Texture2D" uid="uid://8qasxub7y65j" path="res://pixil-frame-0.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dembb5erwu6eo" path="res://images/man.png" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://b6khc2qiwuj65" path="res://label.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://6b14j7i8n2ge" path="res://kelp.gd" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://6vwh5eevyc2p" path="res://images/kelp.png" id="6_cegan"]
 [ext_resource type="Script" uid="uid://b4wjjl4k267rq" path="res://glass.gd" id="7_5vw27"]
-[ext_resource type="Texture2D" uid="uid://dp680f5eiqsu" path="res://pixil-frame-0 (4).png" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://bwnc6ymlkrj64" path="res://images/glass.png" id="8_82xsv"]
 [ext_resource type="Script" uid="uid://qrvkrfv8hbjb" path="res://metal.gd" id="9_4c57u"]
-[ext_resource type="Texture2D" uid="uid://bd8o0sqdkrk50" path="res://Metal Scrap0 (7).png" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cvm6g1u1hxghv" path="res://images/metal.png" id="10_getpj"]
 [ext_resource type="Script" uid="uid://dh8qd83nrsqid" path="res://star.gd" id="11_dg77c"]
-[ext_resource type="Texture2D" uid="uid://k5wdem7t0c0o" path="res://pixil-frame-0 (5).png" id="12_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://df418ha70eid4" path="res://images/star.png" id="12_ryguw"]
 [ext_resource type="Script" uid="uid://d2iv62vhge545" path="res://ring.gd" id="13_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://d1rawuumgjmnm" path="res://pixil-frame-0 (3).png" id="14_w48qg"]
+[ext_resource type="Texture2D" uid="uid://buf73a6ncd8u7" path="res://images/ring.png" id="14_d13ii"]
 [ext_resource type="Script" uid="uid://ciocv4k5ic6lf" path="res://phone.gd" id="15_vivmo"]
-[ext_resource type="Texture2D" uid="uid://c2ii8niq1sbgu" path="res://phone.png" id="16_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://ryf5t14wg28q" path="res://images/phone.png" id="16_2cqfq"]
 [ext_resource type="Script" uid="uid://dyfepnmosujs3" path="res://burger.gd" id="17_074og"]
-[ext_resource type="Texture2D" uid="uid://clr4iepyh0tl3" path="res://burger.png" id="17_yaehf"]
+[ext_resource type="Texture2D" uid="uid://e6mokwc4268y" path="res://images/burger.png" id="17_yaehf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(48, 29)
@@ -28,36 +28,36 @@ size = Vector2(34, 33)
 [node name="Main" type="Node2D" unique_id=1912826009]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1343250890]
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("1_h2yge")
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_074og")
 
 [node name="Player" type="Area2D" parent="." unique_id=387571547 node_paths=PackedStringArray("label")]
 script = ExtResource("2_1bvp3")
 label = NodePath("Label")
 
 [node name="Player_img" type="Sprite2D" parent="Player" unique_id=483242040]
-position = Vector2(125, 86)
+position = Vector2(96.5, 62.5)
 texture = ExtResource("3_7mycd")
 
 [node name="Player_hitbox" type="CollisionShape2D" parent="Player" unique_id=219294239]
-position = Vector2(125, 84)
+position = Vector2(96.5, 60.5)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="Label" type="Label" parent="Player" unique_id=617093626]
-offset_left = 123.0
-offset_top = 14.0
-offset_right = 188.0
-offset_bottom = 37.0
+offset_left = 86.0
+offset_top = 17.0
+offset_right = 151.0
+offset_bottom = 40.0
 script = ExtResource("4_7mycd")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2047346107]
-position = Vector2(172, 102)
+position = Vector2(98, 60)
 zoom = Vector2(6, 6)
-limit_left = -157
-limit_top = 6
-limit_right = 1763
-limit_bottom = 1086
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
 
 [node name="Kelp" type="Area2D" parent="." unique_id=1903325597 node_paths=PackedStringArray("label")]
 script = ExtResource("4_lquwl")
@@ -65,7 +65,7 @@ label = NodePath("../Player/Label")
 
 [node name="Kelp_img" type="Sprite2D" parent="Kelp" unique_id=521550632]
 position = Vector2(532, 293)
-texture = ExtResource("4_1bvp3")
+texture = ExtResource("6_cegan")
 
 [node name="Kelp_hitbox" type="CollisionShape2D" parent="Kelp" unique_id=1859742210]
 position = Vector2(532, 294)
@@ -77,7 +77,7 @@ label = NodePath("../Player/Label")
 
 [node name="Glass_img" type="Sprite2D" parent="Glass" unique_id=252914429]
 position = Vector2(828, 105)
-texture = ExtResource("8_kek77")
+texture = ExtResource("8_82xsv")
 
 [node name="Glass_hitbox" type="CollisionShape2D" parent="Glass" unique_id=372775029]
 position = Vector2(828, 101)
@@ -88,11 +88,11 @@ script = ExtResource("9_4c57u")
 label = NodePath("../Player/Label")
 
 [node name="Metal_img" type="Sprite2D" parent="Metal" unique_id=727965642]
-position = Vector2(629, 825)
-texture = ExtResource("10_efxa6")
+position = Vector2(621, 524)
+texture = ExtResource("10_getpj")
 
 [node name="Metal_hitbox" type="CollisionShape2D" parent="Metal" unique_id=1891924300]
-position = Vector2(629, 821)
+position = Vector2(621, 520)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="Star" type="Area2D" parent="." unique_id=551886613 node_paths=PackedStringArray("label")]
@@ -101,7 +101,7 @@ label = NodePath("../Player/Label")
 
 [node name="Star_img" type="Sprite2D" parent="Star" unique_id=2050187700]
 position = Vector2(1030, 504)
-texture = ExtResource("12_ycdy4")
+texture = ExtResource("12_ryguw")
 
 [node name="Star_hitbox" type="CollisionShape2D" parent="Star" unique_id=1010147440]
 position = Vector2(1031, 505)
@@ -112,11 +112,11 @@ script = ExtResource("13_ycdy4")
 label = NodePath("../Player/Label")
 
 [node name="Ring_img" type="Sprite2D" parent="Ring" unique_id=27298215]
-position = Vector2(1630, 208)
-texture = ExtResource("14_w48qg")
+position = Vector2(124, 306)
+texture = ExtResource("14_d13ii")
 
 [node name="Ring_hitbox" type="CollisionShape2D" parent="Ring" unique_id=1857309616]
-position = Vector2(1631, 209)
+position = Vector2(125, 307)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="Phone" type="Area2D" parent="." unique_id=1194950317 node_paths=PackedStringArray("label")]
@@ -136,9 +136,9 @@ script = ExtResource("17_074og")
 label = NodePath("../Player/Label")
 
 [node name="Burger_img" type="Sprite2D" parent="Burger" unique_id=895606026]
-position = Vector2(1527, 849)
+position = Vector2(794, 360)
 texture = ExtResource("17_yaehf")
 
 [node name="Burger_hitbox" type="CollisionShape2D" parent="Burger" unique_id=1697619901]
-position = Vector2(1528, 850)
+position = Vector2(795, 361)
 shape = SubResource("RectangleShape2D_1bvp3")
