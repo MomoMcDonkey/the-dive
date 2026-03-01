@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://i84u1opejj0v"]
+
+[ext_resource type="Texture2D" uid="uid://dglqo1p5bgpk1" path="res://pixil-frame-0 (6).png" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://bbbadn2qv855s" path="res://player.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cif725le8gsrk" path="res://man.png" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://8qasxub7y65j" path="res://pixil-frame-0.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://b6khc2qiwuj65" path="res://label.gd" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://6b14j7i8n2ge" path="res://kelp.gd" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://b4wjjl4k267rq" path="res://glass.gd" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dp680f5eiqsu" path="res://pixil-frame-0 (4).png" id="8_kek77"]
+[ext_resource type="Script" uid="uid://qrvkrfv8hbjb" path="res://metal.gd" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bd8o0sqdkrk50" path="res://Metal Scrap0 (7).png" id="10_efxa6"]
+[ext_resource type="Script" uid="uid://dh8qd83nrsqid" path="res://star.gd" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://k5wdem7t0c0o" path="res://pixil-frame-0 (5).png" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://d2iv62vhge545" path="res://ring.gd" id="13_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://d1rawuumgjmnm" path="res://pixil-frame-0 (3).png" id="14_w48qg"]
+[ext_resource type="Script" uid="uid://ciocv4k5ic6lf" path="res://phone.gd" id="15_vivmo"]
+[ext_resource type="Texture2D" uid="uid://c2ii8niq1sbgu" path="res://phone.png" id="16_2cqfq"]
+[ext_resource type="Script" uid="uid://dyfepnmosujs3" path="res://burger.gd" id="17_074og"]
+[ext_resource type="Texture2D" uid="uid://clr4iepyh0tl3" path="res://burger.png" id="17_yaehf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(48, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(34, 33)
+
+[node name="Main" type="Node2D" unique_id=1912826009]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1343250890]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_h2yge")
+
+[node name="Player" type="Area2D" parent="." unique_id=387571547 node_paths=PackedStringArray("label")]
+script = ExtResource("2_1bvp3")
+label = NodePath("Label")
+
+[node name="Player_img" type="Sprite2D" parent="Player" unique_id=483242040]
+position = Vector2(125, 86)
+texture = ExtResource("3_7mycd")
+
+[node name="Player_hitbox" type="CollisionShape2D" parent="Player" unique_id=219294239]
+position = Vector2(125, 84)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Label" type="Label" parent="Player" unique_id=617093626]
+offset_left = 123.0
+offset_top = 14.0
+offset_right = 188.0
+offset_bottom = 37.0
+script = ExtResource("4_7mycd")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2047346107]
+position = Vector2(172, 102)
+zoom = Vector2(6, 6)
+limit_left = -157
+limit_top = 6
+limit_right = 1763
+limit_bottom = 1086
+
+[node name="Kelp" type="Area2D" parent="." unique_id=1903325597 node_paths=PackedStringArray("label")]
+script = ExtResource("4_lquwl")
+label = NodePath("../Player/Label")
+
+[node name="Kelp_img" type="Sprite2D" parent="Kelp" unique_id=521550632]
+position = Vector2(532, 293)
+texture = ExtResource("4_1bvp3")
+
+[node name="Kelp_hitbox" type="CollisionShape2D" parent="Kelp" unique_id=1859742210]
+position = Vector2(532, 294)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Glass" type="Area2D" parent="." unique_id=1553938587 node_paths=PackedStringArray("label")]
+script = ExtResource("7_5vw27")
+label = NodePath("../Player/Label")
+
+[node name="Glass_img" type="Sprite2D" parent="Glass" unique_id=252914429]
+position = Vector2(828, 105)
+texture = ExtResource("8_kek77")
+
+[node name="Glass_hitbox" type="CollisionShape2D" parent="Glass" unique_id=372775029]
+position = Vector2(828, 101)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Metal" type="Area2D" parent="." unique_id=668471839 node_paths=PackedStringArray("label")]
+script = ExtResource("9_4c57u")
+label = NodePath("../Player/Label")
+
+[node name="Metal_img" type="Sprite2D" parent="Metal" unique_id=727965642]
+position = Vector2(629, 825)
+texture = ExtResource("10_efxa6")
+
+[node name="Metal_hitbox" type="CollisionShape2D" parent="Metal" unique_id=1891924300]
+position = Vector2(629, 821)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Star" type="Area2D" parent="." unique_id=551886613 node_paths=PackedStringArray("label")]
+script = ExtResource("11_dg77c")
+label = NodePath("../Player/Label")
+
+[node name="Star_img" type="Sprite2D" parent="Star" unique_id=2050187700]
+position = Vector2(1030, 504)
+texture = ExtResource("12_ycdy4")
+
+[node name="Star_hitbox" type="CollisionShape2D" parent="Star" unique_id=1010147440]
+position = Vector2(1031, 505)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Ring" type="Area2D" parent="." unique_id=1486306409 node_paths=PackedStringArray("label")]
+script = ExtResource("13_ycdy4")
+label = NodePath("../Player/Label")
+
+[node name="Ring_img" type="Sprite2D" parent="Ring" unique_id=27298215]
+position = Vector2(1630, 208)
+texture = ExtResource("14_w48qg")
+
+[node name="Ring_hitbox" type="CollisionShape2D" parent="Ring" unique_id=1857309616]
+position = Vector2(1631, 209)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Phone" type="Area2D" parent="." unique_id=1194950317 node_paths=PackedStringArray("label")]
+script = ExtResource("15_vivmo")
+label = NodePath("../Player/Label")
+
+[node name="Phone_img" type="Sprite2D" parent="Phone" unique_id=951515436]
+position = Vector2(331, 577)
+texture = ExtResource("16_2cqfq")
+
+[node name="Phone_hitbox" type="CollisionShape2D" parent="Phone" unique_id=1934896559]
+position = Vector2(332, 578)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Burger" type="Area2D" parent="." unique_id=438026386 node_paths=PackedStringArray("label")]
+script = ExtResource("17_074og")
+label = NodePath("../Player/Label")
+
+[node name="Burger_img" type="Sprite2D" parent="Burger" unique_id=895606026]
+position = Vector2(1527, 849)
+texture = ExtResource("17_yaehf")
+
+[node name="Burger_hitbox" type="CollisionShape2D" parent="Burger" unique_id=1697619901]
+position = Vector2(1528, 850)
+shape = SubResource("RectangleShape2D_1bvp3")

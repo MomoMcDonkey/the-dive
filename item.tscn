@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dciav3ni6c14t"]
+
+[ext_resource type="Script" uid="uid://oiufd2n4jjjp" path="res://spawner.gd" id="1_tfp68"]
+[ext_resource type="PackedScene" uid="uid://dciav3ni6c14t" path="res://Item.tscn" id="2_p0x8t"]
+[ext_resource type="Texture2D" uid="uid://dglqo1p5bgpk1" path="res://pixil-frame-0 (6).png" id="3_b0ia4"]
+[ext_resource type="Script" uid="uid://bbbadn2qv855s" path="res://player.gd" id="4_m4nph"]
+[ext_resource type="Texture2D" uid="uid://dm6ud6sbwvwy8" path="res://pixil-frame-0 (2).png" id="5_lndve"]
+[ext_resource type="Script" uid="uid://bc50pvmmn50av" path="res://item.gd" id="6_abe0y"]
+[ext_resource type="Texture2D" uid="uid://8qasxub7y65j" path="res://pixil-frame-0.png" id="7_kw7t7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(50, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(34, 33)
+
+[node name="Main" type="Node2D" unique_id=1912826009]
+script = ExtResource("1_tfp68")
+item_scene = ExtResource("2_p0x8t")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1343250890]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_b0ia4")
+
+[node name="Player" type="Area2D" parent="." unique_id=387571547]
+script = ExtResource("4_m4nph")
+
+[node name="Player_img" type="Sprite2D" parent="Player" unique_id=483242040]
+position = Vector2(82, 55)
+texture = ExtResource("5_lndve")
+
+[node name="Player_hitbox" type="CollisionShape2D" parent="Player" unique_id=219294239]
+position = Vector2(92, 57)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1425113891]
+position = Vector2(74, 56)
+zoom = Vector2(8, 8)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+
+[node name="Item" type="Area2D" parent="." unique_id=1903325597]
+script = ExtResource("6_abe0y")
+
+[node name="Kelp_img" type="Sprite2D" parent="Item" unique_id=521550632]
+position = Vector2(280, 105)
+texture = ExtResource("7_kw7t7")
+
+[node name="Kelp_hitbox" type="CollisionShape2D" parent="Item" unique_id=1859742210]
+position = Vector2(279, 105.5)
+shape = SubResource("RectangleShape2D_1bvp3")
